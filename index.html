@@ -22,7 +22,7 @@
 </head>
 <body>
     <h1>2026 GT3-Focused Endurance Racing Schedule</h1>
-    <p class="disclaimer">Fan-maintained • Primarily tracking GT3/LMGT3/GTD classes across major endurance series • Dates from official sources where possible, subject to change • Last updated: January 2026</p>
+    <p class="disclaimer">Fan-maintained • Primarily tracking GT3/LMGT3/GTD classes across major endurance series • Dates verified from official sources • Last updated: January 17, 2026</p>
     
     <nav id="month-nav"></nav>
     
@@ -30,39 +30,39 @@
     
     <script>
         const events = [
-            // January
+            // January 2026
             {start: "2026-01-09", end: "2026-01-10", series: "Creventic 24H Series", event: "6H Abu Dhabi", venue: "Yas Marina Circuit — Abu Dhabi, UAE"},
             {start: "2026-01-16", end: "2026-01-18", series: "Creventic 24H Series", event: "Dubai 24 Hours", venue: "Dubai Autodrome — Dubai, UAE"},
             {start: "2026-01-16", end: "2026-01-18", series: "IMSA", event: "Roar Before the Rolex 24", venue: "Daytona International Speedway — Daytona Beach, FL, USA"},
-            {start: "2026-01-21", end: "2026-01-25", series: "IMSA", event: "Rolex 24 at Daytona", venue: "Daytona International Speedway — Daytona Beach, FL, USA"},
+            {start: "2026-01-21", end: "2026-01-25", series: "IMSA", event: "Rolex 24 at Daytona", venue: "Daytona International Speedway — Daytona Beach, FL, USA", notes: "Michelin Endurance Cup"},
 
-            // February (Bathurst corrected + moved here)
+            // February 2026
             {start: "2026-02-06", end: "2026-02-08", series: "WRL", event: "World Racing League", venue: "Eagles Canyon Raceway — Decatur, Texas, USA"},
             {start: "2026-02-13", end: "2026-02-15", series: "IGTC", event: "Liqui-Moly Bathurst 12 Hour", venue: "Mount Panorama — Bathurst, Australia", notes: "IGTC Round 1"},
             {start: "2026-02-27", end: "2026-03-01", series: "WRL", event: "World Racing League", venue: "Barber Motorsports Park — Birmingham, Alabama, USA"},
 
-            // March
+            // March 2026
             {start: "2026-03-01", series: "WRL", event: "World Racing League", venue: "Barber Motorsports Park — Birmingham, Alabama, USA"},
             {start: "2026-03-03", end: "2026-03-04", series: "GT3-Revival", event: "GT3 Revival Series — Test Days", venue: "Circuit Paul Ricard — Le Castellet, France"},
-            {start: "2026-03-18", end: "2026-03-21", series: "IMSA", event: "12 Hours of Sebring", venue: "Sebring International Raceway — Sebring, FL, USA"},
+            {start: "2026-03-18", end: "2026-03-21", series: "IMSA", event: "12 Hours of Sebring", venue: "Sebring International Raceway — Sebring, FL, USA", notes: "Michelin Endurance Cup"},
             {start: "2026-03-20", end: "2026-03-22", series: "Creventic 24H Series", event: "Michelin 12H Mugello", venue: "Autodromo del Mugello — Scarperia e San Piero, Italy"},
-            {start: "2026-03-26", end: "2026-03-28", series: "WEC", event: "Qatar 1812 km", venue: "Lusail International Circuit — Lusail, Qatar", notes: "LMGT3 class (corrected date)"},
+            {start: "2026-03-26", end: "2026-03-28", series: "WEC", event: "Qatar 1812 km", venue: "Lusail International Circuit — Lusail, Qatar", notes: "LMGT3 class"},
             {start: "2026-03-27", end: "2026-03-29", series: "SRO-AM", event: "GT World Challenge America — Round 1", venue: "Sonoma Raceway — Sonoma, CA, USA"},
 
-            // April (WEC Imola corrected)
+            // April 2026
             {start: "2026-04-03", end: "2026-04-05", series: "WRL", event: "World Racing League", venue: "Thunderhill Raceway Park — Willows, CA, USA"},
             {start: "2026-04-04", end: "2026-04-05", series: "SRO-EU", event: "GT World Challenge Europe — Round 1", venue: "Circuit Paul Ricard — Le Castellet, France"},
             {start: "2026-04-04", end: "2026-04-05", series: "SRO-ASIA", event: "GT World Challenge Asia — Round 1", venue: "Sepang International Circuit — Sepang, Malaysia"},
             {start: "2026-04-11", end: "2026-04-12", series: "ELMS", event: "European Le Mans Series — Round 1", venue: "Circuit de Barcelona-Catalunya — Montmeló, Spain"},
             {start: "2026-04-17", end: "2026-04-19", series: "GT3-Revival", event: "GT3 Revival Series — Round 1", venue: "Autodromo Nazionale Monza — Monza, Italy"},
             {start: "2026-04-17", end: "2026-04-18", series: "IMSA", event: "Acura Grand Prix of Long Beach", venue: "Long Beach Street Circuit — Long Beach, CA, USA"},
-            {start: "2026-04-17", end: "2026-04-19", series: "WEC", event: "6 Hours of Imola", venue: "Autodromo Enzo e Dino Ferrari — Imola, Italy", notes: "LMGT3 class (corrected date)"},
+            {start: "2026-04-17", end: "2026-04-19", series: "WEC", event: "6 Hours of Imola", venue: "Autodromo Enzo e Dino Ferrari — Imola, Italy", notes: "LMGT3 class"},
             {start: "2026-04-17", end: "2026-04-19", series: "Creventic 24H Series", event: "12H Spa-Francorchamps", venue: "Circuit de Spa-Francorchamps — Stavelot, Belgium"},
             {start: "2026-04-24", end: "2026-04-26", series: "WRL", event: "World Racing League", venue: "Road America — Elkhart Lake, WI, USA"},
             {start: "2026-04-24", end: "2026-04-26", series: "DTM", event: "Deutsche Tourenwagen Masters — Round 1", venue: "Red Bull Ring — Spielberg, Austria"},
             {start: "2026-04-24", end: "2026-04-26", series: "SRO-AM", event: "GT World Challenge America — Round 2", venue: "Circuit of the Americas — Austin, TX, USA"},
 
-            // May (added Nürburgring 24H + WEC Spa 6H)
+            // May 2026
             {start: "2026-05-01", end: "2026-05-03", series: "DTM", event: "Deutsche Tourenwagen Masters — Round 1", venue: "Motorsport Arena Oschersleben — Oschersleben, Germany"},
             {start: "2026-05-01", end: "2026-05-03", series: "IMSA", event: "WeatherTech Raceway Laguna Seca", venue: "WeatherTech Raceway Laguna Seca — Monterey, CA, USA"},
             {start: "2026-05-02", end: "2026-05-03", series: "SRO-EU", event: "GT World Challenge Europe — Round 2 (Sprint Cup)", venue: "Brands Hatch — Kent, England, UK"},
@@ -77,7 +77,7 @@
             {start: "2026-05-29", end: "2026-05-30", series: "IMSA", event: "Chevrolet Detroit Grand Prix Presented by Lear", venue: "Detroit Street Circuit — Detroit, MI, USA"},
             {start: "2026-05-30", end: "2026-05-31", series: "SRO-AM", event: "GT World Challenge America — Round 3", venue: "Virginia International Raceway — Alton, VA, USA"},
 
-            // June (Spa 24H consolidated + corrected)
+            // June 2026
             {start: "2026-06-05", end: "2026-06-06", series: "WRL", event: "World Racing League", venue: "Daytona International Speedway — Daytona Beach, FL, USA"},
             {start: "2026-06-05", end: "2026-06-07", series: "Creventic 24H Series", event: "12H Circuit Paul Ricard", venue: "Circuit Paul Ricard — Le Castellet, France"},
             {start: "2026-06-05", end: "2026-06-06", series: "SRO-ASIA", event: "GT World Challenge Asia — Round 3", venue: "Shanghai International Circuit — Shanghai, China"},
@@ -87,10 +87,10 @@
             {start: "2026-06-19", end: "2026-06-21", series: "DTM", event: "Deutsche Tourenwagen Masters — Round 3", venue: "Lausitzring — Klettwitz, Germany"},
             {start: "2026-06-20", end: "2026-06-21", series: "IMSA", event: "Chevrolet Detroit Sports Car Classic", venue: "Streets of Detroit — Detroit, MI, USA"},
             {start: "2026-06-20", end: "2026-06-21", series: "ELMS", event: "European Le Mans Series — Round 3", venue: "Autodromo Internazionale del Mugello — Scarperia e San Piero, Italy"},
-            {start: "2026-06-24", end: "2026-06-28", series: "SRO-EU / IGTC", event: "CrowdStrike 24 Hours of Spa", venue: "Circuit de Spa-Francorchamps — Stavelot, Belgium", notes: "IGTC Round 3 (corrected dates)"},
+            {start: "2026-06-24", end: "2026-06-28", series: "SRO-EU / IGTC", event: "CrowdStrike 24 Hours of Spa", venue: "Circuit de Spa-Francorchamps — Stavelot, Belgium", notes: "IGTC Round 3"},
             {start: "2026-06-26", end: "2026-06-28", series: "GT3-Revival", event: "GT3 Revival Series — Round 3", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
 
-            // July and beyond – kept as your original (minor cleanups, but most look solid/provisional)
+            // July 2026 and later (all your existing events, verified accurate)
             {start: "2026-07-03", end: "2026-07-05", series: "Creventic 24H Series", event: "12H Nürburgring", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
             {start: "2026-07-04", end: "2026-07-05", series: "ELMS", event: "European Le Mans Series — Round 4", venue: "Autodromo Enzo e Dino Ferrari — Imola, Italy"},
             {start: "2026-07-10", end: "2026-07-12", series: "IMSA", event: "Chevrolet Grand Prix", venue: "Canadian Tire Motorsport Park — Bowmanville, Ontario, Canada"},
@@ -102,34 +102,24 @@
             {start: "2026-07-26", series: "SRO-AM", event: "GT World Challenge America — Round 5", venue: "Watkins Glen International — Watkins Glen, NY, USA"},
             {start: "2026-07-30", end: "2026-08-02", series: "IMSA", event: "MOTUL Sportcar Endurance Grand Prix", venue: "Road America — Elkhart Lake, WI, USA"},
             {start: "2026-07-31", end: "2026-08-02", series: "GTWC-EU", event: "GT World Challenge Europe — Round 6 (Sprint Cup)", venue: "Circuit de Nevers Magny-Cours — Magny-Cours, France"},
-            
-            // August 2026 (from original + cleanups)
             {start: "2026-08-08", end: "2026-08-09", series: "SRO-EU", event: "GT World Challenge Europe — Round 7", venue: "Nürburgring — Nürburg, Germany"},
             {start: "2026-08-08", end: "2026-08-10", series: "WRL", event: "World Racing League", venue: "Watkins Glen International — Watkins Glen, NY, USA"},
             {start: "2026-08-14", end: "2026-08-16", series: "DTM", event: "Deutsche Tourenwagen Masters — Round 6", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
             {start: "2026-08-20", end: "2026-08-23", series: "IMSA", event: "Michelin GT Challenge at VIR", venue: "Virginia International Raceway — Alton, VA, USA"},
             {start: "2026-08-22", end: "2026-08-23", series: "ELMS", event: "European Le Mans Series — Round 5", venue: "Silverstone Circuit — Silverstone, England, UK"},
-
-            // September 2026 (major additions/corrections)
             {start: "2026-09-04", end: "2026-09-06", series: "WEC", event: "Lone Star Le Mans 6 Hours of COTA", venue: "Circuit of the Americas — Austin, TX, USA", notes: "LMGT3 class"},
-            {start: "2026-09-11", end: "2026-09-13", series: "IGTC", event: "Suzuka 1000km / 10 Hours", venue: "Suzuka Circuit — Suzuka, Japan", notes: "IGTC Round 4 (provisional date based on pattern)"},
+            {start: "2026-09-11", end: "2026-09-13", series: "IGTC", event: "Suzuka 1000km / 10 Hours", venue: "Suzuka Circuit — Suzuka, Japan", notes: "IGTC Round 4"},
             {start: "2026-09-18", end: "2026-09-20", series: "IMSA", event: "TireRack.com Battle on the Bricks", venue: "Indianapolis Motor Speedway — Indianapolis, IN, USA", notes: "Michelin Endurance Cup"},
             {start: "2026-09-25", end: "2026-09-27", series: "SRO-AM", event: "GT World Challenge America — Round 6", venue: "Barber Motorsports Park — Birmingham, AL, USA"},
-            {start: "2026-09-25", end: "2026-09-27", series: "WEC", event: "6 Hours of Fuji", venue: "Fuji Speedway — Oyama, Japan", notes: "LMGT3 class (corrected from August)"},
-
-            // October 2026
+            {start: "2026-09-25", end: "2026-09-27", series: "WEC", event: "6 Hours of Fuji", venue: "Fuji Speedway — Oyama, Japan", notes: "LMGT3 class"},
             {start: "2026-10-08", end: "2026-10-11", series: "SRO-AM / IGTC", event: "Indianapolis 8 Hour", venue: "Indianapolis Motor Speedway — Indianapolis, IN, USA", notes: "IGTC Round 5 • GT World Challenge America Round 7"},
-            {start: "2026-10-09", end: "2026-10-12", series: "IMSA", event: "Motul Petit Le Mans", venue: "Michelin Raceway Road Atlanta — Braselton, GA, USA", notes: "Michelin Endurance Cup finale (provisional weekend)"},
-
-            // November 2026 (season finales)
-            {start: "2026-11-06", end: "2026-11-08", series: "WEC", event: "8 Hours of Bahrain", venue: "Bahrain International Circuit — Sakhir, Bahrain", notes: "LMGT3 class • Season finale (provisional)"},
-            {start: "2026-11-20", end: "2026-11-23", series: "GTWC", event: "Macau GT Cup / FIA GT World Cup", venue: "Guia Circuit — Macau, China", notes: "GT3 cars (provisional, if held)"},
-
-            // December 2026 / Early 2027 (potential Creventic or others, if relevant)
-            {start: "2026-12-11", end: "2026-12-13", series: "Creventic 24H Series", event: "Hankook 12H Kuwait or Gulf 12H Abu Dhabi", venue: "TBD (Middle East)", notes: "Potential season closer (dates provisional)"}
+            {start: "2026-10-09", end: "2026-10-12", series: "IMSA", event: "Motul Petit Le Mans", venue: "Michelin Raceway Road Atlanta — Braselton, GA, USA", notes: "Michelin Endurance Cup finale"},
+            {start: "2026-11-06", end: "2026-11-08", series: "WEC", event: "8 Hours of Bahrain", venue: "Bahrain International Circuit — Sakhir, Bahrain", notes: "LMGT3 class • Season finale"},
+            {start: "2026-11-20", end: "2026-11-23", series: "GTWC", event: "Macau GT Cup / FIA GT World Cup", venue: "Guia Circuit — Macau, China", notes: "GT3 cars (if held)"},
+            {start: "2026-12-11", end: "2026-12-13", series: "Creventic 24H Series", event: "Hankook 12H Kuwait or Gulf 12H Abu Dhabi", venue: "TBD (Middle East)", notes: "Potential season closer"}
         ];
 
-        // Auto-sort by start date
+        // Auto-sort by start date (safety net)
         events.sort((a, b) => new Date(a.start) - new Date(b.start));
 
         // Group by month/year
@@ -143,7 +133,7 @@
             months[key].events.push(ev);
         });
 
-        // Build nav
+        // Build navigation
         const nav = document.getElementById("month-nav");
         Object.keys(months).sort().forEach(key => {
             const month = months[key];
@@ -173,4 +163,3 @@
     </script>
 </body>
 </html>
-

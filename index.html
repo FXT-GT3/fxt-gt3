@@ -203,7 +203,7 @@
 			{start: "2026-06-25", end: "2026-06-28", series: "IMSA", event: "Sahlen's Six Hours of The Glen", venue: "Watkins Glen International — Watkins Glen, NY, USA", notes: "Michelin Endurance Cup"},
             {start: "2026-06-26", end: "2026-06-28", series: "GT3-Revival", event: "GT3 Revival Series — Round 3", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
 
-            // July 2026 and later (all your existing events, verified accurate)
+            // July 2026 and later
             {start: "2026-07-03", end: "2026-07-05", series: "Creventic 24H Series", event: "12H Nürburgring", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
 			{start: "2026-07-10", end: "2026-07-12", series: "WEC", event: "Rolex 6 Hours of São Paulo", venue: "Autódromo José Carlos Pace (Interlagos) — São Paulo, Brazil", notes: "LMGT3 class"},
 			{start: "2026-07-30", end: "2026-08-02", series: "IMSA", event: "MOTUL Sportcar Endurance Grand Prix", venue: "Road America — Elkhart Lake, WI, USA"},
@@ -242,45 +242,45 @@
         }
 
         // The rest of the script (sorting, grouping, nav, schedule build) – only small change to add class
-        events.sort((a, b) => new Date(a.start) - new Date(b.start));
+events.sort((a, b) => new Date(a.start) - new Date(b.start));
 
-        const months = {};
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        events.forEach(ev => {
-            const d = new Date(ev.start);
-            const key = `${d.getFullYear()}-${d.getMonth()}`;
-            const monthName = `${monthNames[d.getMonth()]} ${d.getFullYear()}`;
-            if (!months[key]) months[key] = {name: monthName, events: []};
-            months[key].events.push(ev);
-        });
+const months = {};
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+events.forEach(ev => {
+    const d = new Date(ev.start);
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
+    const monthName = `${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+    if (!months[key]) months[key] = {name: monthName, events: []};
+    months[key].events.push(ev);
+});
 
-        const nav = document.getElementById("month-nav");
-        Object.keys(months).sort().forEach(key => {
-            const month = months[key];
-            const anchor = month.name.replace(" ", "-");
-            nav.innerHTML += `<a href="#${anchor}">${month.name.split(" ")[0]}</a>`;
-        });
+const nav = document.getElementById("month-nav");
+Object.keys(months).sort().forEach(key => {
+    const month = months[key];
+    const anchor = month.name.replace(" ", "-");
+    nav.innerHTML += `<a href="#${anchor}">${month.name.split(" ")[0]}</a>`;
+});
 
-        const schedule = document.getElementById("schedule");
-        Object.keys(months).sort().forEach(key => {
-            const month = months[key];
-            const anchor = month.name.replace(" ", "-");
-            schedule.innerHTML += `<section id="${anchor}"><h2>${month.name}</h2><ul></ul><div class="back-to-top"><a href="#top">↑ Top</a></div></section>`;
-            const ul = schedule.lastChild.querySelector("ul");
-            month.events.forEach(ev => {
-                const seriesClass = getSeriesClass(ev.series);
-                const dateStr = ev.end && ev.end !== ev.start ? 
-                    `${new Date(ev.start).toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}–${new Date(ev.end).toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}` : 
-                    new Date(ev.start).toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+const schedule = document.getElementById("schedule");
+Object.keys(months).sort().forEach(key => {
+    const month = months[key];
+    const anchor = month.name.replace(" ", "-");
+    schedule.innerHTML += `<section id="${anchor}"><h2>${month.name}</h2><ul></ul><div class="back-to-top"><a href="#top">↑ Top</a></div></section>`;
+    const ul = schedule.lastChild.querySelector("ul");
+    month.events.forEach(ev => {
+        const seriesClass = getSeriesClass(ev.series);
+        const dateStr = ev.end && ev.end !== ev.start ? 
+            `${new Date(ev.start).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'})}–${new Date(ev.end).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'})}` : 
+            new Date(ev.start).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
 
-                ul.innerHTML += `<li class="${seriesClass}">
-                    <span class="date">${dateStr}</span> 
-                    <span class="series">[${ev.series}]</span> 
-                    ${ev.event} — ${ev.venue}
-                    ${ev.notes ? `<span class="notes">(${ev.notes})</span>` : ''}
-                </li>`;
-            });
-        });
+        ul.innerHTML += `<li class="${seriesClass}">
+            <span class="date">${dateStr}</span> 
+            <span class="series">[${ev.series}]</span> 
+            ${ev.event} — ${ev.venue}
+            ${ev.notes ? `<span class="notes">(${ev.notes})</span>` : ''}
+        </li>`;
+    });
+});
     </script>
 </body>
 </html>

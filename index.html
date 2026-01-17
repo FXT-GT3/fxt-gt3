@@ -255,14 +255,22 @@ events.forEach(ev => {
 });
 
 const nav = document.getElementById("month-nav");
-Object.keys(months).sort().forEach(key => {
+Object.keys(months).sort((a, b) => {
+    const [yearA, monthA] = a.split('-').map(Number);
+    const [yearB, monthB] = b.split('-').map(Number);
+    return yearA - yearB || monthA - monthB;
+}).forEach(key => {
     const month = months[key];
     const anchor = month.name.replace(" ", "-");
     nav.innerHTML += `<a href="#${anchor}">${month.name.split(" ")[0]}</a>`;
 });
 
 const schedule = document.getElementById("schedule");
-Object.keys(months).sort().forEach(key => {
+Object.keys(months).sort((a, b) => {
+    const [yearA, monthA] = a.split('-').map(Number);
+    const [yearB, monthB] = b.split('-').map(Number);
+    return yearA - yearB || monthA - monthB;
+}).forEach(key => {
     const month = months[key];
     const anchor = month.name.replace(" ", "-");
     schedule.innerHTML += `<section id="${anchor}"><h2>${month.name}</h2><ul></ul><div class="back-to-top"><a href="#top">↑ Top</a></div></section>`;

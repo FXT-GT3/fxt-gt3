@@ -251,13 +251,13 @@ events.sort((a, b) => new Date(a.start) - new Date(b.start));
 const months = {};
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 events.forEach(ev => {
-    const d = new Date(ev.start);
-    const key = `${d.getFullYear()}-${d.getMonth()}`;
-    const monthName = `${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+    const d = new Date(ev.start + 'T00:00:00Z');  // Force UTC midnight to avoid local timezone shift
+    const key = `${d.getUTCFullYear()}-${d.getUTCMonth()}`;
+    const monthName = `${monthNames[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
     if (!months[key]) months[key] = {name: monthName, events: []};
     months[key].events.push(ev);
 });
-
+		
 const nav = document.getElementById("month-nav");
 Object.keys(months).sort((a, b) => {
     const [yearA, monthA] = a.split('-').map(Number);
@@ -296,3 +296,4 @@ Object.keys(months).sort((a, b) => {
     </script>
 </body>
 </html>
+

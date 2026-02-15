@@ -259,6 +259,10 @@
 
 			// December 2026
 			{start: "2026-12-04", end: "2026-12-06", series: "WRL", event: "World Racing League", venue: "Circuit of the Americas — Austin, TX, USA"},
+			{start: "2026-12-14", end: "2026-12-16", series: "Gulf 12 Hours", event: "TBD", venue: "TBD"},
+
+			// January 2027
+			{start: "2027-01-09", end: "2027-01-10", series: "Gulf 12 Hours", event: "TBD", venue: "TBD"},
         ];
 
         // Function to map series name to your original CSS class(es)
@@ -271,6 +275,7 @@
             if (s.includes("creventic")) return "c24hs";
             if (s.includes("elms")) return "elms";
             if (s.includes("gt3-revival") || s.includes("gt3revival")) return "gt3revival";
+			if (s.includes("gulf")) return "gulf12";
             if (s.includes("imsa")) return "imsa";
             if (s.includes("wec")) return "wec";
             if (s.includes("wrl")) return "wrl";
@@ -341,6 +346,7 @@ Object.keys(months).sort((a, b) => {
     </script>
 </body>
 </html>
+
 
 
 

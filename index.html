@@ -211,9 +211,8 @@
             {start: "2026-06-20", end: "2026-06-21", series: "ELMS", event: "European Le Mans Series — Round 3", venue: "Autodromo Internazionale del Mugello — Scarperia e San Piero, Italy"},
             {start: "2026-06-24", end: "2026-06-28", series: "SRO-EU / IGTC", event: "CrowdStrike 24 Hours of Spa", venue: "Circuit de Spa-Francorchamps — Stavelot, Belgium", notes: "IGTC Round 3"},
 			{start: "2026-06-25", end: "2026-06-28", series: "IMSA", event: "Sahlen's Six Hours of The Glen", venue: "Watkins Glen International — Watkins Glen, NY, USA", notes: "Michelin Endurance Cup"},
-            
 
-            // July 2026 and later
+            // July 2026
             {start: "2026-07-03", end: "2026-07-05", series: "Creventic 24H Series", event: "12H Nürburgring", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
 			{start: "2026-07-03", end: "2026-07-05", series: "GT3-Revival", event: "GT3 Revival Series — Round 3", venue: "Circuit de la Sarthe — Le Mans, France"},
 			{start: "2026-07-10", end: "2026-07-12", series: "WEC", event: "Rolex 6 Hours of São Paulo", venue: "Autódromo José Carlos Pace (Interlagos) — São Paulo, Brazil"},
@@ -221,27 +220,31 @@
 			{start: "2026-07-24", end: "2026-07-26", series: "WRL", event: "World Racing League", venue: "Michelin Raceway Road Atlanta — Braselton, GA, USA"},
 			{start: "2026-07-30", end: "2026-08-02", series: "IMSA", event: "MOTUL Sportcar Endurance Grand Prix", venue: "Road America — Elkhart Lake, WI, USA"},
 
-			// August 2026 and later
+			// August 2026
 			{start: "2026-08-28", end: "2026-08-30", series: "GT3-Revival", event: "GT3 Revival Series — Round 4", venue: "Nürburgring Grand Prix Circuit — Nürburg, Germany"},
 			{start: "2026-08-28", end: "2026-08-30", series: "SRO-AM", event: "GT World Challenge America — Round 5", venue: "Road America — Elkhart Lake, WI, USA"},
 			{start: "2026-08-29", end: "2026-08-30", series: "SRO-ASIA", event: "GT World Challenge Asia — Round 5", venue: "Okayama International Circuit — Okayama, Japan"},
 			{start: "2026-08-28", end: "2026-08-30", series: "WRL", event: "World Racing League", venue: "Watkins Glen International — Watkins Glen, NY, USA"},
 
-			// September 2026 and later
+			// September 2026
 			{start: "2026-09-04", end: "2026-09-06", series: "WEC", event: "Lone Star Le Mans", venue: "Circuit of the Americas — Austin, TX, USA"},
 			{start: "2026-09-18", end: "2026-09-20", series: "Creventic 24H Series", event: "Michelin 24H Barcelona", venue: "Circuit de Barcelona-Catalunya — Montmeló, Spain"},
 			{start: "2026-09-25", end: "2026-09-27", series: "SRO-AM", event: "GT World Challenge America — Round 6", venue: "Barber Motorsports Park — Birmingham, Alabama, USA"},
 			{start: "2026-09-25", end: "2026-09-27", series: "WEC", event: "6 Hours of Fuji", venue: "Fuji Speedway — Oyama, Japan"},
 			{start: "2026-09-25", end: "2026-09-27", series: "WRL", event: "World Racing League", venue: "Burt Brothers Motorpark — Grantsville, Utah, USA"},
 
-			// August 2026 and later
+			// October 2026
 			{start: "2026-10-01", end: "2026-10-03", series: "IMSA", event: "Motul Petit Le Mans", venue: "Michelin Raceway Road Atlanta — Braselton, GA, USA", notes: "Michelin Endurance Cup finale"},
 			{start: "2026-10-02", end: "2026-10-04", series: "SRO-ASIA", event: "GT World Challenge Asia — Round 6", venue: "Beijing Street Circuit — Beijing, China"},
 			{start: "2026-10-03", end: "2026-10-04", series: "GT3-Revival", event: "GT3 Revival Series — Round 5", venue: "Circuit de Spa-Francorchamps — Stavelot, Belgium"},
 			{start: "2026-10-08", end: "2026-10-10", series: "SRO-AM", event: "GT World Challenge America — Round 7", venue: "Indianapolis Motor Speedway — Indianapolis, IN, USA"},
 			{start: "2026-10-16", end: "2026-10-18", series: "WRL", event: "World Racing League", venue: "Sebring International Raceway — Sebring, FL, USA"},
+
+			// November 2026
 			{start: "2026-11-05", end: "2026-11-07", series: "WEC", event: "Bapco Energies 8 Hours of Bahrain", venue: "Bahrain International Circuit — Sakhir, Bahrain"},
 			{start: "2026-11-19", end: "2026-11-22", series: "FIA-GTWCUP", event: "FIA GT World Cup — Macau Grand Prix", venue: "Guia Circuit — Macau, China"},
+
+			// December 2026
 			{start: "2026-12-04", end: "2026-12-06", series: "WRL", event: "World Racing League", venue: "Circuit of the Americas — Austin, TX, USA"},
         ];
 
@@ -264,6 +267,7 @@
             if (s.includes("sro-am") && s.includes("igtc")) return "sroam igtc"; // if you ever add Indy combined specific
             if (s.includes("sro-am")) return "sroam";
             if (s.includes("sro-asia")) return "sroasia";
+			if (s.includes("sro-aus")) return "sroaus";
 
             // IGTC + SRO-EU handling
             if (s.includes("sro-eu") && s.includes("igtc")) return "sroeu igtc"; // Spa – uses your exact combined rule
@@ -324,6 +328,7 @@ Object.keys(months).sort((a, b) => {
     </script>
 </body>
 </html>
+
 
 
 

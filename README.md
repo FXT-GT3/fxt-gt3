@@ -3,7 +3,7 @@
 
 Fan-maintained • Primarily tracking 
 GT3/LMGT3/GTD classes across major endurance series • Dates verified 
-from official sources • Last updated: February 14, 2026
+from official sources • Last updated: February 15, 2026
 
 <!--
 **FXT-GT3/fxt-gt3** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

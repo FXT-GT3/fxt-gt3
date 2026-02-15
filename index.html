@@ -232,6 +232,7 @@
             if (!series) return "";
             const s = series.toLowerCase();
 
+			if (s.includes("asian")) return "alms";
             if (s.includes("dtm")) return "dtm";
             if (s.includes("creventic")) return "c24hs";
             if (s.includes("elms")) return "elms";
@@ -305,6 +306,7 @@ Object.keys(months).sort((a, b) => {
     </script>
 </body>
 </html>
+
 
 
 
